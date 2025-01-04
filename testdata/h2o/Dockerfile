@@ -47,6 +47,9 @@ RUN ln -sf /dev/stderr /var/log/h2o/error.log
 
 RUN mkdir /etc/h2o
 
-EXPOSE 8444
+EXPOSE 80/tcp
+EXPOSE 80/udp
+EXPOSE 443/tcp
+EXPOSE 443/udp
 
 CMD ["h2o", "--conf", "/etc/h2o/connect.conf"]
